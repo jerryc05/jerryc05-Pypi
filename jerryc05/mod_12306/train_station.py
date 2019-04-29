@@ -1,5 +1,5 @@
-def __get_a__() -> tuple:
- return ('aax|昂昂溪|AAX|angangxi|aax|520',
+def parse(s)->list:
+	x=(('aax|昂昂溪|AAX|angangxi|aax|520',
 'abq|阿巴嘎旗|AQC|abagaqi|abgq|2141',
 'acb|阿城北|ABB|achengbei|acb|2142',
 'ach|阿城|ACB|acheng|ac|521',
@@ -48,9 +48,7 @@ def __get_a__() -> tuple:
 'axi|安溪|AXS|anxi|ax|549',
 'aya|安阳|AYF|anyang|ay|86',
 'ayd|安阳东|ADF|anyangdong|ayd|2149',
-)
-def __get_b__() -> tuple:
- return ('ban|北安|BAB|beian|ba|87',
+),('ban|北安|BAB|beian|ba|87',
 'bao|博鳌|BWQ|boao|ba|550',
 'bba|博白|BBZ|bobai|bb|2150',
 'bbe|北碚|BPW|beibei|bb|551',
@@ -175,9 +173,7 @@ def __get_b__() -> tuple:
 'bzh|滨州|BIK|binzhou|bz|2180',
 'bzh|霸州|RMP|bazhou|bz|616',
 'bzx|霸州西|FOP|bazhouxi|bzx|2182',
-)
-def __get_c__() -> tuple:
- return ('cbb|赤壁北|CIN|chibibei|cbb|618',
+),('cbb|赤壁北|CIN|chibibei|cbb|618',
 'cbg|查布嘎|CBC|chabuga|cbg|619',
 'cbi|赤壁|CBN|chibi|cb|106',
 'cch|澄城|CUY|chengcheng|cc|2183',
@@ -314,9 +310,7 @@ def __get_c__() -> tuple:
 'czw|车转湾|CWM|chezhuanwan|czw|684',
 'czx|沧州西|CBP|cangzhouxi|czx|686',
 'czx|郴州西|ICQ|chenzhouxi|czx|685',
-)
-def __get_d__() -> tuple:
- return ('dab|大安北|RNT|daanbei|dab|128',
+),('dab|大安北|RNT|daanbei|dab|128',
 'dad|东安东|DCZ|dongandong|dad|2217',
 'dan|大安|RAT|daan|da|688',
 'dan|德安|DAG|dean|da|687',
@@ -503,9 +497,7 @@ def __get_d__() -> tuple:
 'dzy|大竹园|DZY|dazhuyuan|dzy|798',
 'dzz|大杖子|DAP|dazhangzi|dzz|799',
 'dzz|豆张庄|RZP|douzhangzhuang|dzz|800',
-)
-def __get_e__() -> tuple:
- return ('ebi|峨边|EBW|ebian|eb|801',
+),('ebi|峨边|EBW|ebian|eb|801',
 'edm|二道沟门|RDP|erdaogoumen|edgm|802',
 'edw|二道湾|RDX|erdaowan|edw|803',
 'ees|鄂尔多斯|EEC|eerduosi|eeds|804',
@@ -522,9 +514,7 @@ def __get_e__() -> tuple:
 'eyi|二营|RYJ|erying|ey|810',
 'ezd|鄂州东|EFN|ezhoudong|ezd|2265',
 'ezh|鄂州|ECN|ezhou|ez|811',
-)
-def __get_f__() -> tuple:
- return ('fan|福安|FAS|fuan|fa|812',
+),('fan|福安|FAS|fuan|fa|812',
 'fcb|防城港北|FBZ|fangchenggangbei|fcgb|2266',
 'fcd|凤城东|FDT|fengchengdong|fcd|2267',
 'fch|丰城|FCG|fengcheng|fc|813',
@@ -603,9 +593,7 @@ def __get_f__() -> tuple:
 'fzh|范镇|VZK|fanzhen|fz|854',
 'fzn|福州 南|FXS|fuzhounan|fzn|2290',
 'fzn|福州南|FYS|fuzhounan|fzn|30',
-)
-def __get_g__() -> tuple:
- return ('gan|固安|GFP|guan|ga|855',
+),('gan|固安|GFP|guan|ga|855',
 'gan|广安|VJW|guangan|ga|856',
 'gan|广安南|VUW|guangannan|gan|2292',
 'gan|贵安|GAE|guian|ga|2293',
@@ -729,9 +717,7 @@ def __get_g__() -> tuple:
 'gzs|冠豸山|GSS|guanzhaishan|gzs|924',
 'gzx|广州西|GXQ|guangzhouxi|gzx|33',
 'gzx|盖州西|GAT|gaizhouxi|gzx|925',
-)
-def __get_h__() -> tuple:
- return ('han|惠安|HNS|huian|ha|2325',
+),('han|惠安|HNS|huian|ha|2325',
 'han|海安|HIH|haian|ha|926',
 'han|淮安|AUH|huaian|ha|180',
 'han|淮安南|AMH|huaiannan|han|927',
@@ -950,11 +936,7 @@ def __get_h__() -> tuple:
 'hzn|惠州南|KNQ|huizhounan|hzn|2383',
 'hzn|杭州南|XHH|hangzhounan|hzn|46',
 'hzx|惠州西|VXQ|huizhouxi|hzx|1035',
-)
-def __get_i__() -> tuple:
- return ()
-def __get_j__() -> tuple:
- return ('jan|吉安|VAG|jian|ja|217',
+),('jan|吉安|VAG|jian|ja|217',
 'jan|建安|JUL|jianan|ja|2384',
 'jan|集安|JAL|jian|ja|218',
 'jba|巨宝|JRT|jubao|jb|1036',
@@ -1109,9 +1091,7 @@ def __get_j__() -> tuple:
 'jzu|焦作|JOF|jiaozuo|jz|1116',
 'jzw|旧庄窝|JVP|jiuzhuangwo|jzw|1117',
 'jzz|金杖子|JYD|jinzhangzi|jzz|1118',
-)
-def __get_k__() -> tuple:
- return ('kan|开安|KAT|kaian|ka|1119',
+),('kan|开安|KAT|kaian|ka|1119',
 'kch|库车|KCR|kuche|kc|1120',
 'kch|康城|KCP|kangcheng|kc|1121',
 'kde|库都尔|KDX|kuduer|kde|1122',
@@ -1153,9 +1133,7 @@ def __get_k__() -> tuple:
 'kyx|开原西|KXT|kaiyuanxi|kyx|1139',
 'kzh|康庄|KZP|kangzhuang|kz|1140',
 'kzu|喀左|KZT|kazuo|kz|2433',
-)
-def __get_l__() -> tuple:
- return ('lad|隆安东|IDZ|longandong|lad|2434',
+),('lad|隆安东|IDZ|longandong|lad|2434',
 'lan|六安|UAH|luan|la|255',
 'lba|灵宝|LBF|lingbao|lb|256',
 'lbb|来宾北|UCZ|laibinbei|lbb|2435',
@@ -1385,9 +1363,7 @@ def __get_l__() -> tuple:
 'lzn|临泽南|LDJ|linzenan|lzn|2489',
 'lzq|兰州新区|LQJ|lanzhouxinqu|lzxq|1267',
 'lzx|兰州西|LAJ|lanzhouxi|lzx|54',
-)
-def __get_m__() -> tuple:
- return ('mad|马鞍山东|OMH|maanshandong|masd|2490',
+),('mad|马鞍山东|OMH|maanshandong|masd|2490',
 'mas|马鞍山|MAH|maanshan|mas|1268',
 'mba|毛坝|MBY|maoba|mb|1269',
 'mbg|毛坝关|MGY|maobaguan|mbg|1270',
@@ -1475,9 +1451,7 @@ def __get_m__() -> tuple:
 'mzh|米脂|MEY|mizhi|mz|1317',
 'mzi|蒙自|MZM|mengzi|mz|2511',
 'mzl|满洲里|MLX|manzhouli|mzl|312',
-)
-def __get_n__() -> tuple:
- return ('nan|农安|NAT|nongan|na|1320',
+),('nan|农安|NAT|nongan|na|1320',
 'nan|宁安|NAB|ningan|na|1319',
 'nbd|宁波东|NVH|ningbodong|nbd|313',
 'nbo|宁波|NGH|ningbo|nb|314',
@@ -1568,11 +1542,7 @@ def __get_n__() -> tuple:
 'nzh|南召|NAF|nanzhao|nz|1363',
 'nzm|南杂木|NZT|nanzamu|nzm|1364',
 'nzs|碾子山|NZX|nianzishan|nzs|326',
-)
-def __get_o__() -> tuple:
- return ()
-def __get_p__() -> tuple:
- return ('pan|平安|PAL|pingan|pa|1366',
+),('pan|平安|PAL|pingan|pa|1366',
 'pan|普安|PAN|puan|pa|2539',
 'pan|蓬安|PAW|pengan|pa|1365',
 'pax|普安县|PUE|puanxian|pax|2540',
@@ -1661,9 +1631,7 @@ def __get_p__() -> tuple:
 'pzi|泡子|POD|paozi|pz|1416',
 'pzn|平庄南|PND|pingzhuangnan|pzn|1417',
 'pzn|彭州南|PKW|pengzhounan|pzn|2564',
-)
-def __get_q__() -> tuple:
- return ('qan|乾安|QOT|qianan|qa|1418',
+),('qan|乾安|QOT|qianan|qa|1418',
 'qan|庆安|QAB|qingan|qa|1419',
 'qan|秦安|QGJ|qinan|qa|2565',
 'qan|迁安|QQP|qianan|qa|1420',
@@ -1764,9 +1732,7 @@ def __get_q__() -> tuple:
 'qzn|全州南|QNZ|quanzhounan|qzn|2594',
 'qzs|青州市|QZK|qingzhoushi|qzs|1474',
 'qzw|棋子湾|QZQ|qiziwan|qzw|2595',
-)
-def __get_r__() -> tuple:
- return ('ran|瑞安|RAH|ruian|ra|1475',
+),('ran|瑞安|RAH|ruian|ra|1475',
 'ran|融安|RAZ|rongan|ra|350',
 'rbu|仁布|RUO|renbu|rb|2596',
 'rcb|荣昌北|RQW|rongchangbei|rcb|2597',
@@ -1793,9 +1759,7 @@ def __get_r__() -> tuple:
 'rzh|日照|RZK|rizhao|rz|353',
 'rzh|汝州|ROF|ruzhou|rz|1488',
 'rzx|日照西|KZK|rizhaoxi|rzx|2604',
-)
-def __get_s__() -> tuple:
- return ('sba|石坝|OBJ|shiba|sb|1489',
+),('sba|石坝|OBJ|shiba|sb|1489',
 'sbc|上板城|SBP|shangbancheng|sbc|1490',
 'sbi|施秉|AQW|shibing|sb|1491',
 'sbn|上板城南|OBP|shangbanchengnan|sbcn|1492',
@@ -2052,9 +2016,7 @@ def __get_s__() -> tuple:
 'szs|石嘴山|QQJ|shizuishan|szs|2661',
 'szx|深圳西|OSQ|shenzhenxi|szx|386',
 'szx|石柱县|OSW|shizhuxian|szx|2662',
-)
-def __get_t__() -> tuple:
- return ('tan|台安|TID|taian|ta|1646',
+),('tan|台安|TID|taian|ta|1646',
 'tan|台安南|TAD|taiannan|tan|2663',
 'tan|泰安|TMK|taian|ta|1645',
 'tay|通安驿|TAJ|tonganyi|tay|1647',
@@ -2185,13 +2147,7 @@ def __get_t__() -> tuple:
 'tzl|桐子林|TEW|tongzilin|tzl|1714',
 'tzs|天柱山|QWH|tianzhushan|tzs|1715',
 'tzx|通州西|TAP|tongzhouxi|tzx|409',
-)
-def __get_u__() -> tuple:
- return ()
-def __get_v__() -> tuple:
- return ()
-def __get_w__() -> tuple:
- return ('wan|文安|WBP|wenan|wa|1716',
+),('wan|文安|WBP|wenan|wa|1716',
 'wan|武安|WAP|wuan|wa|1717',
 'waz|王安镇|WVP|wanganzhen|waz|1718',
 'wbu|吴堡|WUY|wubu|wb|1719',
@@ -2326,9 +2282,7 @@ def __get_w__() -> tuple:
 'wzt|王兆屯|WZB|wangzhaotun|wzt|1793',
 'wzz|微子镇|WQP|weizizhen|wzz|1794',
 'wzz|魏杖子|WKD|weizhangzi|wzz|1795',
-)
-def __get_x__() -> tuple:
- return ('xab|兴安北|XDZ|xinganbei|xab|2721',
+),('xab|兴安北|XDZ|xinganbei|xab|2721',
 'xab|西安北|EAY|xianbei|xab|71',
 'xan|兴安|XAZ|xingan|xa|1797',
 'xan|新安|EAM|xinan|xa|1796',
@@ -2532,9 +2486,7 @@ def __get_x__() -> tuple:
 'xzm|西哲里木|XRD|xizhelimu|xzlm|1935',
 'xzx|忻州西|IXV|xinzhouxi|xzx|2763',
 'xzz|新杖子|ERP|xinzhangzi|xzz|1936',
-)
-def __get_y__() -> tuple:
- return ('yan|依安|YAX|yian|ya|1938',
+),('yan|依安|YAX|yian|ya|1938',
 'yan|姚安|YAC|yaoan|ya|1937',
 'yan|延安|YWY|yanan|ya|449',
 'yan|永安|YAS|yongan|ya|1939',
@@ -2765,9 +2717,7 @@ def __get_y__() -> tuple:
 'yzi|迤资|YQM|yizi|yz|2059',
 'yzw|羊者窝|AEM|yangzhewo|yzw|2060',
 'yzz|杨杖子|YZD|yangzhangzi|yzz|2061',
-)
-def __get_z__() -> tuple:
- return ('zan|治安|ZAD|zhian|za|2063',
+),('zan|治安|ZAD|zhian|za|2063',
 'zan|诏安|ZDS|zhaoan|za|2821',
 'zan|镇安|ZEY|zhenan|za|2062',
 'zba|招柏|ZBP|zhaobai|zb|2064',
@@ -2908,4 +2858,10 @@ def __get_z__() -> tuple:
 'zzx|枣庄西|ZFK|zaozhuangxi|zzx|519',
 'zzx|株洲西|ZAQ|zhuzhouxi|zzx|2139',
 'zzx|郑州西|XPF|zhengzhouxi|zzx|2140',
-)
+))
+	from bisect import bisect as b
+	r,i=[],b(x,(s[0],))
+	for t in x[i]:
+		if s in t:
+			r.append(t.split('|'))
+	return r

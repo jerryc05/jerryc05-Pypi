@@ -43,4 +43,4 @@ No argument specified! I donno what to do, my flend!
 
 
 if __name__ == "__main__":
-    main([12306, None][1:])
+    main([12306, None][:])
