@@ -1,0 +1,6 @@
+/jerryc05.egg-info
+/build
+/dist
+.mypy_cache
+.sonarlint
+__pycache__
