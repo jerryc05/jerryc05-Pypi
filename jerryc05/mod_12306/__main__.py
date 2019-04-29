@@ -5,16 +5,18 @@ def main(args: list = []):
         keyword = input('Keywords for train station? ').lower()
 
     station: list = parse(keyword)
+    if not station:
+        station=[('','','','--- NO RESULT! ---','','')]
     station.sort(key=lambda x: x[3])
-    print('+----------------+-----+------+---------+')
-    print('|  STATION NAME  |     |  ID  |   CHN   |')
-    print('+----------------+-----+------+---------+')
+    print('+--------------------+-----+------+-------------+')
+    print('|    STATION NAME    |     |  ID  |     CHN     |')
+    print('+--------------------+-----+------+-------------+')
     for x in station:
-        print(f'| {x[3]:14} | {x[2]:3} | {x[5]:4} | {x[1]:{8-len(x[1])+x[1].count(" ")}}|')
+        print(f'| {x[3]:18} | {x[2]:3} | {x[5]:4} | {x[1]:{11-len(x[1])+x[1].count(" ")}} |')
         # print(
         #     f'| {x[3]:14} | {x[2]:3} | {x[5]:4} | {x[1].replace(" ", chr(12288)):{chr(12288)}<4}  |')
 
-    print('+----------------+-----+------+---------+')
+    print('+--------------------+-----+------+-------------+')
 
     # from getpass import getpass
     # print(
@@ -22,4 +24,6 @@ def main(args: list = []):
 
 
 if __name__ == "__main__":
-    main()
+    from sys import path
+    path.insert(0, '.')
+    main(['b'])

@@ -1,10 +1,6 @@
 def main(args: list = [None]):
     from sys import argv
     args[:0] = argv
-    from sys import path
-    path.append('.')
-    print()
-
     from jerryc05.mod_12306.__main__ import main as main_12306
 
     {
@@ -43,4 +39,6 @@ No argument specified! I donno what to do, my flend!
 
 
 if __name__ == "__main__":
-    main([12306, 'fz'][:])
+    from sys import path
+    path.insert(0, '.')
+    main([12306, 'beij'])
