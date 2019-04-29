@@ -8,7 +8,7 @@ def main(args: list = [None]):
     from jerryc05.mod_12306.__main__ import main as main_12306
 
     {
-        '12306': lambda: main_12306(args[1:]),
+        '12306': lambda: main_12306(args[2:]),
         None: lambda: print('''\
 No argument specified! I donno what to do, my flend!
                                   .. .vr
@@ -43,4 +43,4 @@ No argument specified! I donno what to do, my flend!
 
 
 if __name__ == "__main__":
-    main([12306, None][:])
+    main([12306, 'fz'][:])
