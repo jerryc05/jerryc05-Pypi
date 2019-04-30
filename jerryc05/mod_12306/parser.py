@@ -1,5 +1,5 @@
 def station_name(station_name_js: str = 'station_name.js',
-                 train_station_py: str = 'train_station.py'):
+                 train_station_py: str = 'train_station.py') -> None:
     js_list: list = []
     with open(station_name_js, encoding='utf-8') as __js:
         js: str = __js.read()
@@ -33,6 +33,14 @@ def station_name(station_name_js: str = 'station_name.js',
 ''')
 
 
+def ticket_count(num: str) -> str:
+    return {
+        '': '\\',
+        '无': '0',
+        '有': '20+',
+    }.get(num, num)
+
+
 if __name__ == "__main__":
-    station_name('jerryc05/mod_12306/station_name.js',
-                 'jerryc05/mod_12306/train_station.py')
+    # station_name('jerryc05/mod_12306/station_name.js',
+    #              'jerryc05/mod_12306/train_station.py')

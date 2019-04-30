@@ -17,8 +17,9 @@ def query_city(city: str) -> tuple:
 +-----+--------------------+-----+--------------+\
 ''')
     for index, item in enumerate(station):
-        print(
-            f'| {index:3} | {item[3]:18} | {item[2]:3} | {item[1]:{12-len(item[1])+item[1].count(" ")}} |')
+        print(f'''\
+| {index:3} | {item[3]:18} | {item[2]:3} | {item[1]:{12-len(item[1])+item[1].count(" ")}} |\
+''')
     print('''\
 +-----+--------------------+-----+--------------+\
 ''')
@@ -48,13 +49,20 @@ def main(args=[]):
     from urllib import request
     with request.urlopen(
         'https://kyfw.12306.cn/otn/leftTicket/query?'
-        f'leftTicketDTO.train_date={date}'
-        f'&leftTicketDTO.from_station={depart_city[1]}'
-        f'&leftTicketDTO.to_station={arrive_city[1]}'
-        f'&purpose_codes=ADULT'
+        f'leftTicketDTO.train_date={date}&'
+        f'leftTicketDTO.from_station={depart_city[1]}&'
+        f'leftTicketDTO.to_station={arrive_city[1]}&'
+        'purpose_codes=ADULT'
     ) as r:
         import json
-        for item in json.loads(r.read().decode('utf-8'))['data']['result']:
+        print(f'''\
++-------+-------+-------+-------+-------+-------+-------+---------+---------+------+------+
+| TRAIN | START |  END  | TOTAL |  VIP  |  1ST  |  2ND  |  SOFT-  |  HARD-  | HARD | NONE |
+|  NO.  | TIME: | TIME: | TIME: | CLASS | CLASS | CLASS | SLEEPER | SLEEPER | SEAT | SEAT |
++-------+-------+-------+-------+-------+-------+-------+---------+---------+------+------+\
+''')
+        from jerryc05.mod_12306.parser import ticket_count
+        for item in json.loads(r.read())['data']['result']:
             train = item.split('|')
             train_no = train[3]
             # from_station_code = train[6]
@@ -64,16 +72,31 @@ def main(args=[]):
             start_time = train[8]
             arrive_time = train[9]
             total_time = train[10]
-            first_class_seat = train[31] or '--'
-            second_class_seat = train[30] or '--'
-            soft_sleep = train[23] or '--'
-            hard_sleep = train[28] or '--'
-            hard_seat = train[29] or '--'
-            no_seat = train[26] or '--'
+            vip_class_seat = ticket_count(train[32])
+            first_class_seat = ticket_count(train[31])
+            second_class_seat = ticket_count(train[30])
+            soft_sleeper = ticket_count(train[23])
+            hard_sleeper = ticket_count(train[28])
+            hard_seat = ticket_count(train[29])
+            no_seat = ticket_count(train[26])
 
-            info = (f'车次:{train_no}\t出发时间:{start_time}\t到达时间:{arrive_time}\t消耗时间:{total_time}\t座位情况：\t 一等座：「{first_class_seat}」 \t二等座：「{second_class_seat}」\t软卧：「{soft_sleep}」\t硬卧：「{hard_sleep}」\t硬座：「{hard_seat}」\t无座：「{no_seat}」\n\n')
+            print(
+                f'| {train_no:5} '
+                f'| {start_time:5} '
+                f'| {arrive_time:5} '
+                f'| {total_time:^5} '
+                f'| {vip_class_seat:^5} '
+                f'| {first_class_seat:^5} '
+                f'| {second_class_seat:^5} '
+                f'| {soft_sleeper:^7} '
+                f'| {hard_sleeper:^7} '
+                f'| {hard_seat:^4} '
+                f'| {no_seat:^4} |'
+            )
 
-            print(info)
+        print(f'''\
++-------+-------+-------+-------+-------+-------+-------+---------+---------+------+------+\
+''')
 
     # from getpass import getpass
     # print(
@@ -83,4 +106,4 @@ def main(args=[]):
 if __name__ == "__main__":
     from sys import path
     path.insert(0, '.')
-    main(['beij', 'fz', '2019-05-02'])
+    main(['beij', 'fz', '2019-05-03'])
