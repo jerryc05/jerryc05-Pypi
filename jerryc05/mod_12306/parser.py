@@ -42,5 +42,6 @@ def ticket_count(num: str) -> str:
 
 
 if __name__ == "__main__":
+    pass
     # station_name('jerryc05/mod_12306/station_name.js',
     #              'jerryc05/mod_12306/train_station.py')
