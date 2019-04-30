@@ -1,3 +1,3 @@
 # todo auto update
 
-__version__ = '0.1a6'
+__version__ = '0.1'

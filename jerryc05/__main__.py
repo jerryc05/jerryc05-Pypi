@@ -1,11 +1,11 @@
-def main(args: list = [None]):
+def main(args: list = ['']):
     from sys import argv
     args[:0] = argv
     from jerryc05.mod_12306.__main__ import main as main_12306
 
     {
         '12306': lambda: main_12306(args[2:]),
-        None: lambda: print('''\
+        '': lambda: print('''\
 No argument specified! I donno what to do, my flend!
                                   .. .vr
                                 qBMBBBMBMY
@@ -34,11 +34,11 @@ No argument specified! I donno what to do, my flend!
            :r2. rMBGBMGi .7Y, 1i::i   vO0PMNNSXXEqPYSecbone.
            .i1r. .jkY,    vE. iY....  20Fq0q5X5F1S2F22uuv1M;\
 '''),
-    }.get(args[1] if args[1] == None or type(args[1]) == str else f'{args[1]}',
-          lambda: print(f'Argument {args[1]} unsupported. Contact support?'))()
+    }.get(args[1], lambda: print(
+        f'Argument {args[1]} unsupported. Contact support?'))()
 
 
 if __name__ == "__main__":
     from sys import path
     path.insert(0, '.')
-    main([12306, 'beij'])
+    main(['12306', 'beij'])
