@@ -1,10 +1,12 @@
 def main(args: list = ['']):
     from sys import argv
     args[:0] = argv
+    from jerryc05 import __version__
     from jerryc05.mod_12306.__main__ import main as main_12306
 
     {
         '12306': lambda: main_12306(args[2:]),
+        '-v':lambda:print(__version__),
         '': lambda: print('''\
 No argument specified! I donno what to do, my flend!
                                   .. .vr

@@ -18,7 +18,7 @@ def query_city(city: str) -> tuple:
 ''')
     for index, item in enumerate(station):
         print(f'''\
-| {index:3} | {item[3]:18} | {item[2]:3} | {item[1]:{12-len(item[1])+item[1].count(" ")}} |\
+| {index+1:3} | {item[3]:18} | {item[2]:3} | {item[1]:{12-len(item[1])+item[1].count(" ")}} |\
 ''')
     print('''\
 +-----+--------------------+-----+--------------+\
@@ -27,9 +27,9 @@ def query_city(city: str) -> tuple:
     if not station[0][0]:
         return query_city(input(f'City name "{city}" not found, retry: '))
 
-    index_chosen = int(input('Index number: '))
+    index_chosen = int(input('Index number: '))-1
     while not 0 <= index_chosen < len(station):
-        index_chosen = int(input('Index number invalid, retry: '))
+        index_chosen = int(input('Index number invalid, retry: '))-1
     __result = (station[index_chosen][1], station[index_chosen][2])
     return __result
 
@@ -61,8 +61,11 @@ def main(args=[]):
 |  NO.  | TIME: | TIME: | TIME: | CLASS | CLASS | CLASS | SLEEPER | SLEEPER | SEAT | SEAT |
 +-------+-------+-------+-------+-------+-------+-------+---------+---------+------+------+\
 ''')
-        from jerryc05.mod_12306.parser import ticket_count
-        for item in json.loads(r.read())['data']['result']:
+        from jerryc05.mod_12306.parser import ticket_count, colored_text
+        train_data: tuple = json.loads(r.read())['data']['result']
+        if not train_data:
+            train_data=('|||-----|||||-----|-----|-----|||||||||||||||||||||||',)
+        for item in train_data:
             train = item.split('|')
             train_no = train[3]
             # from_station_code = train[6]
@@ -80,19 +83,32 @@ def main(args=[]):
             hard_seat = ticket_count(train[29])
             no_seat = ticket_count(train[26])
 
-            print(
-                f'| {train_no:5} '
-                f'| {start_time:5} '
-                f'| {arrive_time:5} '
-                f'| {total_time:^5} '
-                f'| {vip_class_seat:^5} '
-                f'| {first_class_seat:^5} '
-                f'| {second_class_seat:^5} '
-                f'| {soft_sleeper:^7} '
-                f'| {hard_sleeper:^7} '
-                f'| {hard_seat:^4} '
+            info = f'| {train_no:5} '\
+                f'| {start_time:5} '\
+                f'| {arrive_time:5} '\
+                f'| {total_time:^5} '\
+                f'| {vip_class_seat:^5} '\
+                f'| {first_class_seat:^5} '\
+                f'| {second_class_seat:^5} '\
+                f'| {soft_sleeper:^7} '\
+                f'| {hard_sleeper:^7} '\
+                f'| {hard_seat:^4} '\
                 f'| {no_seat:^4} |'
-            )
+
+            if not second_class_seat == '\\' and not second_class_seat == '0':
+                colored_text(info, 'green', style='bright')
+
+            elif (vip_class_seat == '\\' or vip_class_seat == '0') and \
+                (first_class_seat == '\\' or first_class_seat == '0') and \
+                (second_class_seat == '\\' or second_class_seat == '0') and \
+                (soft_sleeper == '\\' or soft_sleeper == '0') and \
+                (hard_sleeper == '\\' or hard_sleeper == '0') and \
+                (hard_seat == '\\' or hard_seat == '0') and \
+                    (no_seat == '\\' or no_seat == '0'):
+                colored_text(info, 'red', style='dim')
+
+            else:
+                print(info)
 
         print(f'''\
 +-------+-------+-------+-------+-------+-------+-------+---------+---------+------+------+\
@@ -106,4 +122,4 @@ def main(args=[]):
 if __name__ == "__main__":
     from sys import path
     path.insert(0, '.')
-    main(['beij', 'fz', '2019-05-03'])
+    main(['wulu', 'xiam', '2019-05-03'])

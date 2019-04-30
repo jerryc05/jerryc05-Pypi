@@ -52,8 +52,10 @@ setup(
     #     'Tracker': 'https://github.com/pypa/sampleproject/issues',
     # },
     packages=packages,
-    # install_requires=[
-    #     'requests', ],
+    install_requires=[
+        'colorama',
+        # 'requests',
+    ],
     python_requires='~=3.6',
     # package_data={
     # If any package contains *.txt files, include them:
