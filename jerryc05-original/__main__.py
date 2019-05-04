@@ -16,7 +16,7 @@ def main(args: list = None):
         args[:0] = argv
     else:
         args = argv
-    __version__ = jerryc05.__version__
+    __v = jerryc05.__version__
     # todo
 
     if args[1] == '':
@@ -54,7 +54,7 @@ def main(args: list = None):
         jerryc05.mod_12306.__main__.main(args[2:])
         return
     if args[1] == '-v':
-        print(__version__)
+        print(__v)
         return
     else:
         print(f'Argument {args[1]} unsupported. Contact support?')

@@ -1,123 +1,33 @@
-def station_name(station_name_js='station_name.js',
-                 station_name_py='station_name.py') -> None:
-    js_list = []
-    with open(station_name_js, encoding='utf-8') as __js:
-        js: str = __js.read()
-        start = js.find("'")
-        if start == -1:
-            raise SystemError(
-                'Parsing js failed: "=" not found in "station_name.js"')
-        start += 1
-        if js[start] == '@':
-            start += 1
-        end = js.find("'", start)
-        __js_list = js[start:end].split('@')
-        for _ in __js_list:
-            js_list.append(_.split('|'))
-        import operator
-        js_list.sort(key=operator.itemgetter(4))
-
-    with open(station_name_py, 'w', encoding='utf-8') as station:
-        station.write('def parse(s):\n\tx=((')
-
-        __first_letter = 'a'
-        for _ in js_list:
-            first_letter = _[4][0]
-            while first_letter != __first_letter:
-                station.write('),\n(')
-                __first_letter = chr(ord(__first_letter) + 1)
-            station.write(f'{tuple(_)},\n')
-
-        station.write('))\n'
-                      '\tr=[]\n'
-                      '\tfor _ in x[ord(s[0])-97]:\n'
-                      '\t\tif s in _[4] or s in _[3]:\n'
-                      '\t\t\tr.append(_)\n'
-                      '\treturn r')
-
-
-def ticket_count(num: str) -> str:
-    r"""Parse and format ticket count.
-
-    :param num: Number of tickets
-    :return: ''->'\', '无'->'0', '有'->' 20+'
-    """
-
-    if num == '':
-        return '\\'
-    if num == '无':
-        return '0'
-    if num == '有':
-        return ' 20+'
-    else:
-        return num
-
-
-def colored_text(text: str,
-                 fore='RESET',
-                 back='RESET',
-                 style='RESET_ALL') -> None:
-    r"""Print text in colored format.
-
-    :param text: Text to format.
-    :param fore: Foreground color to format, default='RESET'.
-    :param back: Background color to format, default='RESET'.
-    :param style: Style to format, default='RESET_ALL'.
-
-    Available colors:
-        RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, BLACK, RESET.
-
-    Available styles:
-        DIM, NORMAL, BRIGHT, RESET_ALL.
-    """
-
-    fore = fore.upper()
-    back = back.upper()
-    style = style.upper()
-
-    import colorama
-    colorama.init(autoreset=True)
-    c_fore = colorama.Fore
-    fores = {
-        'RED': c_fore.RED,
-        'GREEN': c_fore.GREEN,
-        'YELLOW': c_fore.YELLOW,
-        'BLUE': c_fore.BLUE,
-        'MAGENTA': c_fore.MAGENTA,
-        'CYAN': c_fore.CYAN,
-        'WHITE': c_fore.WHITE,
-        'BLACK': c_fore.BLACK,
-        'RESET': c_fore.RESET,
-    }
-    if back == 'RESET' and style == 'RESET_ALL':
-        print(f'{fores.get(fore.upper(), "")}{text}')
-        return
-
-    c_back = colorama.Back
-    backs = {
-        'RED': c_back.RED,
-        'GREEN': c_back.GREEN,
-        'YELLOW': c_back.YELLOW,
-        'BLUE': c_back.BLUE,
-        'MAGENTA': c_back.MAGENTA,
-        'CYAN': c_back.CYAN,
-        'WHITE': c_back.WHITE,
-        'BLACK': c_back.BLACK,
-        'RESET': c_back.RESET,
-    }
-    c_style = colorama.Style
-    styles = {
-        'DIM': c_style.DIM,
-        'NORMAL': c_style.NORMAL,
-        'BRIGHT': c_style.BRIGHT,
-        'RESET_ALL': c_style.RESET_ALL,
-    }
-    print(f'{styles.get(style.upper(), "")}'
-          f'{fores.get(fore.upper(), "")}'
-          f'{backs.get(back.upper(), "")}'
-          f'{text}')
-
-
-# colored_text('red', 'red')
-# station_name('jerryc05/mod_12306/station_name.js',
-#              'jerryc05/mod_12306/station_name.py')
+L=print
+H=open
+J='RESET_ALL'
+E=str
+D='RESET'
+C=''
+def station_name(station_name_js='station_name.js',station_name_py='station_name.py'):
+	P='@';O="'";N='utf-8';F=[]
+	with H(station_name_js,encoding=N)as I:
+		B=I.read();A=B.find(O)
+		if A==-1:raise SystemError('Parsing js failed: "=" not found in "station_name.js"')
+		A+=1
+		if B[A]==P:A+=1
+		J=B.find(O,A);K=B[A:J].split(P)
+		for C in K:F.append(C.split('|'))
+		import operator as L;F.sort(key=L.itemgetter(4))
+	with H(station_name_py,'w',encoding=N)as D:
+		D.write('def parse(s):\n\tx=((');G='a'
+		for C in F:
+			M=C[4][0]
+			while M!=G:D.write('),\n(');G=chr(ord(G)+1)
+			D.write(f"{tuple(C)},\n")
+		D.write('))\n\tr=[]\n\tfor _ in x[ord(s[0])-97]:\n\t\tif s in _[4] or s in _[3]:\n\t\t\tr.append(_)\n\treturn r')
+def ticket_count(num):
+	A=num
+	if A==C:return'\\'
+	if A=='无':return'0'
+	if A=='有':return' 20+'
+	else:return A
+def colored_text(text,fore=D,back=D,style=J):
+	V='BLACK';U='WHITE';T='CYAN';S='MAGENTA';R='BLUE';Q='YELLOW';P='GREEN';O='RED';G=style;F=back;E=fore;E=E.upper();F=F.upper();G=G.upper();import colorama as H;H.init(autoreset=True);A=H.Fore;K={O:A.RED,P:A.GREEN,Q:A.YELLOW,R:A.BLUE,S:A.MAGENTA,T:A.CYAN,U:A.WHITE,V:A.BLACK,D:A.RESET}
+	if F==D and G==J:L(f"{K.get(E.upper(),'')}{text}");return
+	B=H.Back;M={O:B.RED,P:B.GREEN,Q:B.YELLOW,R:B.BLUE,S:B.MAGENTA,T:B.CYAN,U:B.WHITE,V:B.BLACK,D:B.RESET};I=H.Style;N={'DIM':I.DIM,'NORMAL':I.NORMAL,'BRIGHT':I.BRIGHT,J:I.RESET_ALL};L(f"{N.get(G.upper(),'')}{K.get(E.upper(),'')}{M.get(F.upper(),'')}{text}")

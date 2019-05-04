@@ -1,4 +1,5 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
+
 from jerryc05.__init__ import __version__
 
 long_description = ''
@@ -48,8 +49,13 @@ setup(
     #     'Source': 'https://github.com/pypa/sampleproject/',
     #     'Tracker': 'https://github.com/pypa/sampleproject/issues',
     # },
-    packages=(find_packages(
-        exclude=['contrib', 'docs', 'tests*'])),
+    packages=(find_packages(exclude=[
+        'contrib',
+        'docs',
+        'tests*',
+        'jerryc05-original',
+        'jerryc05-original.*',
+    ])),
     install_requires=[
         'colorama',
         'docopt',
@@ -63,7 +69,7 @@ setup(
     #     # of the 'mypkg' package, also:
     #     'mypkg': ['data/*.dat'],
     # },
-    data_files=[('my_data', ['data/data_file'])],
+    # data_files=[('my_data', ['data/data_file'])],
     zip_safe=True,
     entry_points={
         'console_scripts': ['jerryc05 = jerryc05.__main__:main'],
