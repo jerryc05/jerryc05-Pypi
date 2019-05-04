@@ -9,11 +9,11 @@ for dir_path, _, file_names in os.walk('jerryc05-original'):
     if 'cache' in dir_path:
         continue
     new_dir_path = dir_path.replace('jerryc05-original', 'jerryc05')
+    if not os.path.isdir(new_dir_path):
+        os.mkdir(new_dir_path)
     for file_name in file_names:
-        if file_name in exclude:
-            continue
         with open(f'{dir_path}/{file_name}', 'r', encoding='utf-8') as f1, \
-                open(f'{new_dir_path}/{file_name}', 'w', encoding='utf-8') as f2:
+                open(f'{new_dir_path}/{file_name}', 'w+', encoding='utf-8') as f2:
             f2.write(python_minifier.minify(
                 f1.read(),
                 remove_literal_statements=True,
@@ -25,8 +25,8 @@ for dir_path, _, file_names in os.walk('jerryc05-original'):
                     'ticket_count',
                     'colored_text',
                 ]
-            )
-                     if '.py' == file_name[-3:] else f1.read())
+            ) if '.py' == file_name[-3:] and
+                 file_name not in exclude else f1.read())
 print('Minify done!!')
 
 processes = [
