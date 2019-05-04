@@ -6,12 +6,8 @@ with open("README.md", "r") as readme:
     long_description = readme.read()
 
 github_repo: str = 'https://github.com/jerryc05/jerryc05-Pypi'
-#
-packages: list = find_packages(
-    exclude=['contrib', 'docs', 'tests*'])  # ['jerryc05']
 
 # https://packaging.python.org/guides/distributing-packages-using-setuptools/#setup-args
-
 setup(
     name='jerryc05',
     version=__version__,
@@ -25,21 +21,22 @@ setup(
     license='agpl-3.0',
     classifiers=[
         'Development Status :: 1 - Planning',
-         # 'Development Status :: 2 - Pre-Alpha',
-         # 'Development Status :: 3 - Alpha'
-         # 'Development Status :: 4 - Beta'
-         # 'Development Status :: 5 - Production/Stable'
-         # 'Development Status :: 6 - Mature'
-         # 'Development Status :: 7 - Inactive'
+        # 'Development Status :: 2 - Pre-Alpha',
+        # 'Development Status :: 3 - Alpha'
+        # 'Development Status :: 4 - Beta'
+        # 'Development Status :: 5 - Production/Stable'
+        # 'Development Status :: 6 - Mature'
+        # 'Development Status :: 7 - Inactive'
 
-         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
-         'Natural Language :: English',
-        #  'Operating System :: Microsoft :: Windows',
-         'Programming Language :: Python :: 3',
-         'Programming Language :: Python :: 3.6',
-         'Programming Language :: Python :: 3.7',
-         # 'Programming Language :: Python :: 3.8',
-         # 'Programming Language :: Python :: Implementation :: CPython'
+        'Environment :: Console',
+        'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
+        'Natural Language :: English',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        # 'Programming Language :: Python :: 3.8',
+        # 'Programming Language :: Cython',
     ],
     keywords=[
         'jerryc05',
@@ -51,20 +48,22 @@ setup(
     #     'Source': 'https://github.com/pypa/sampleproject/',
     #     'Tracker': 'https://github.com/pypa/sampleproject/issues',
     # },
-    packages=packages,
+    packages=(find_packages(
+        exclude=['contrib', 'docs', 'tests*'])),
     install_requires=[
         'colorama',
+        'docopt',
         # 'requests',
     ],
     python_requires='~=3.6',
     # package_data={
-    # If any package contains *.txt files, include them:
-    # '': ['*.txt'],
-    # And include any *.dat files found in the 'data' subdirectory
-    # of the 'mypkg' package, also:
-    # 'mypkg': ['data/*.dat'],
+    #     # If any package contains *.txt files, include them:
+    #     '': ['*.txt'],
+    #     # And include any *.dat files found in the 'data' subdirectory
+    #     # of the 'mypkg' package, also:
+    #     'mypkg': ['data/*.dat'],
     # },
-    # data_files=[('my_data', ['data/data_file'])],
+    data_files=[('my_data', ['data/data_file'])],
     zip_safe=True,
     entry_points={
         'console_scripts': ['jerryc05 = jerryc05.__main__:main'],
