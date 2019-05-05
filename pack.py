@@ -20,7 +20,6 @@ for dir_path, _, file_names in os.walk('jerryc05-original'):
                 rename_globals=True,
                 preserve_globals=[
                     'main',
-                    'query_city',
                     'station_name',
                     'ticket_count',
                     'colored_text',
@@ -42,5 +41,5 @@ for _, _, file_names in os.walk('dist'):
     subprocess.call(fr'python -m pip install -U --pre --force-reinstall dist/{file_names[0]}',
                     shell=True)
     break
-subprocess.call(r'twine upload -u jerryc05 dist\*', shell=True)
+subprocess.call(r'twine upload --verbose -u jerryc05 dist\*', shell=True)
 input('All done!!')
