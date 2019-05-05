@@ -58,7 +58,7 @@ setup(
     ])),
     install_requires=[
         'colorama',
-        'docopt',
+        # 'docopt',
         # 'requests',
     ],
     python_requires='~=3.6',

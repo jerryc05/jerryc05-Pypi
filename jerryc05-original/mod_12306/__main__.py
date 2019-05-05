@@ -84,6 +84,7 @@ def main(args: list = None):
             'purpose_codes=ADULT'
     ) as r:
         import json
+        # todo add dcity adn acity
         print('+-------+-------+-------+-------+-------+-------+-------+---------'
               '+---------+------+------+\n'
               '| TRAIN | START |  END  | TOTAL |  VIP  |  1ST  |  2ND  |  SOFT-  '
@@ -95,7 +96,10 @@ def main(args: list = None):
         import jerryc05.mod_12306.mod_parser
         ticket_count = jerryc05.mod_12306.mod_parser.ticket_count
         colored_text = jerryc05.mod_12306.mod_parser.colored_text
-        train_data: tuple = json.loads(r.read())['data']['result']
+        r_bytes = r.read()
+        if b'<' in r_bytes[:4]:
+            raise SystemError(f'Invalid date, {date} may be some date in the past.')
+        train_data: tuple = json.loads(r_bytes)['data']['result']
         if not train_data:
             train_data = (
                 '|||-----|||||-----|-----|-----|||||||||||||||||||||||',)
@@ -152,8 +156,9 @@ def main(args: list = None):
     #     f'\nYour password is hidden when typing!\n
     #     Password = {getpass("Type password here (hidden): ")}')
 
+
 # if __name__ == "__main__":
 #     from sys import path
 #
 #     path.insert(0, '.')
-#     main(['beijing', 'xm', '2019-05-03'])
+# main(['fz', 'bj', '2019-05-04'])
