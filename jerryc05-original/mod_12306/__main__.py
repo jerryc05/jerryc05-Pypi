@@ -22,11 +22,10 @@ def main(args: list = None):
         else:
             date = input(f'Date "{date}" invalid, retry: ')
 
+    depart_city = ''
+    arrive_city = ''
+    import gc
     if 1:  # Parse pinyin to station code
-        # depart_city, arrive_city = query_city(args[0], args[1])
-        depart_city = ''
-        arrive_city = ''
-
         import jerryc05.mod_12306.station_name
         parse = jerryc05.mod_12306.station_name.parse
         city = args[0].lower()
@@ -71,6 +70,8 @@ def main(args: list = None):
             else:
                 arrive_city = (__station[1], __station[2])
             city = args[1].lower()
+
+        gc.collect()
 
     if 1:  # Network accessing
         import urllib.request

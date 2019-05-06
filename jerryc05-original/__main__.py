@@ -19,7 +19,7 @@ def main(args: list = None):
     __v = jerryc05.__version__
     # todo
 
-    if args[1] == '':
+    if len(args) < 2 or args[1] == '':
         print(
             'No argument specified! I donno what to do, my flend!\n'
             '                                  .. .vr\n'
@@ -49,18 +49,17 @@ def main(args: list = None):
             '           :r2. rMBGBMGi .7Y, 1i::i   vO0PMNNSXXEqPYSecbone.\n'
             '           .i1r. .jkY,    vE. iY....  20Fq0q5X5F1S2F22uuv1M;'
         )
-        return
-    if args[1] == '12306':
+    elif args[1] == '12306':
         jerryc05.mod_12306.__main__.main(args[2:])
-        return
-    if args[1] == '-v':
+    elif args[1] == '-v':
         print(__v)
-        return
     else:
         print(f'Argument {args[1]} unsupported. Contact support?')
     return
+
 
 # if __name__ == "__main__":
 #     path = sys.path
 #     path.insert(0, '.')
 # main(['12306', 'beijing', 'fz', '20190505'])
+# main()
