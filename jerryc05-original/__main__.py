@@ -58,8 +58,8 @@ def main(args: list = None):
     return
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
+    main()
 #     path = sys.path
 #     path.insert(0, '.')
 # main(['12306', 'beijing', 'fz', '20190505'])
-# main()
