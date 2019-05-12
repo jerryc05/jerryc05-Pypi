@@ -1,4 +1,4 @@
-__version__ = '0.1.7a2'
+__version__ = '0.1.7a3'
 
 import urllib.request as u_req
 try:
