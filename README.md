@@ -26,7 +26,7 @@ Feel free to try it out, and submit an issue if you found a bug.
 -   N/A
 
 ### In progress
--   [12306 Ticket Grabbing](#12306-ticket-grabbing)
+-   12306 Ticket Grabbing
 ### Planning
 -   BaiduYun Storage Download
 -   Bilibili Video Download
@@ -45,13 +45,13 @@ The official releases of `jerryc05` are distributed on [PyPI](https://pypi.pytho
 
 Open `cmd.exe` or `powershell.exe` (Win) or `terminal` (Mac, Linux), and type:
 
-```
+```console
 pip3 install -U jerryc05
 ```
 
 or
 
-```
+```console
 python3 -m pip install -U jerryc05
 ```
 
