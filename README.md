@@ -41,19 +41,21 @@ The following dependency is necessary:
 
 ### Option 1: Install via pip (recommended)
 
-The official releases of `jerryc05` are distributed on [PyPI](https://pypi.python.org/pypi/jerryc05), and can be installed easily via the pip package manager:
+The official releases of `jerryc05` are distributed on [PyPI](https://pypi.python.org/pypi/jerryc05), and can be installed easily via the pip package manager.
 
-```bash
-$ pip3 install -U jerryc05
+Open `cmd.exe` or `powershell.exe` (Win) or `terminal` (Mac, Linux), and type:
+
+```
+pip3 install -U jerryc05
 ```
 
 or
 
-```bash
-$ python3 -m pip install -U jerryc05
+```
+python3 -m pip install -U jerryc05
 ```
 
-*Note*: Windows users should replace`python3` with `python`.
+*Note*: Windows users should replace command `python3` with `python`.
 
 ### Option 2: Download from GitHub
 
@@ -61,7 +63,7 @@ You can download the latest [pre-release archive](https://github.com/jerryc05/je
 
 ## Documentation
 
-// todo
+See [Wiki page](<https://github.com/jerryc05/jerryc05-PyPI/wiki>).
 
 ## Contributing
 
