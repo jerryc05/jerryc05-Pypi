@@ -53,7 +53,7 @@ or
 $ python3 -m pip install -U jerryc05
 ```
 
-*Note*: Windows users should replace`python3` with `python`.
+*Note*: Windows users should replace command `python3` with `python`.
 
 ### Option 2: Download from GitHub
 
@@ -61,7 +61,7 @@ You can download the latest [pre-release archive](https://github.com/jerryc05/je
 
 ## Documentation
 
-// todo
+See [Wiki page](<https://github.com/jerryc05/jerryc05-PyPI/wiki>).
 
 ## Contributing
 
