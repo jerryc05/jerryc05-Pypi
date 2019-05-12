@@ -1,24 +1,25 @@
-__version__ = '0.1.7a0'
+__version__ = '0.1.7a1'
 
-import urllib.request
-
-with urllib.request.urlopen('https://pypi.org/project/jerryc05/', timeout=1
-                            ) as r:
-    r_read: bytes = r.read()
-    start = r_read.find(b'package-header__name')
-    start = r_read.find(b'c05', start) + 4
-    end = r_read.find(b'\n', start)
-    latest = r_read[start:end].decode().split('.')
-
-    current = __version__.split('.')
-    current_last = current[-1]
-    for i in range(0, len(current_last)):
-        if current_last[i].isalpha():
-            current.remove(current_last)
-            current.append(f'{int(current_last[:i]) - .5}')
-            break
-    if current < latest:
-        import jerryc05.mod_12306.mod_parser
-        colored_text = jerryc05.mod_12306.mod_parser.colored_text
-        colored_text(f'New version {".".join(latest)} is available!!!\n'
-              'Upgrade using command "pip3 install -U jerryc05".\n','yellow')
+import urllib.request as u_req
+try:
+    print(end='Checking for updates...\r')
+    with u_req.urlopen(u_req.Request('https://pypi.org/pypi/jerryc05/json'),
+                                timeout=1) as r:
+        import json
+        js = json.loads(r.read())
+        r_latest = js['info']['version']
+        latest = r_latest.split('.')
+        current = __version__.split('.')
+        current_last = current[-1]
+        for index, char in enumerate(current_last):
+            if char.isalpha():
+                current.remove(current_last)
+                current.append(f'{int(current_last[:index]) - .5}')
+                break
+        if current < latest:
+            import jerryc05.mod_parser as j_parser
+            colored_text = j_parser.colored_text
+            colored_text(f'New version {r_latest} is available!!!\n'
+                         'Upgrade using command "pip3 install -U jerryc05".\n', 'yellow')
+except:
+    print('')

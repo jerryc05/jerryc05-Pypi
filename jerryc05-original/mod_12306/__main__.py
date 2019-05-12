@@ -26,13 +26,13 @@ def main(args: list = None):
     arrive_city = ''
     import gc
     if 1:  # Parse pinyin to station code
-        import jerryc05.mod_12306.station_name
-        parse = jerryc05.mod_12306.station_name.parse
+        import jerryc05.mod_12306.station_name as m12306_station_name
+        parse = m12306_station_name.parse
         city = args[0].lower()
         import operator
         itemgetter = operator.itemgetter
         while not arrive_city:
-            station = None
+            station=()
             while not station or not station[0][0]:
                 while not city or not 96 < ord(city[0]) < 123:
                     city = input(
@@ -51,7 +51,7 @@ def main(args: list = None):
                 print('+-----+--------------------+------+--------------+')
 
                 if not station[0][0]:
-                    station = None
+                    station = ()
                     city = input(f'City name "{city}" not found, retry: ')
 
             __index = int(input('Index number: ')) - 1
@@ -74,14 +74,14 @@ def main(args: list = None):
         gc.collect()
 
     if 1:  # Network accessing
-        import urllib.request
-        with urllib.request.urlopen(
+        import urllib.request as u_req
+        with u_req.urlopen(u_req.Request(
                 'https://kyfw.12306.cn/otn/leftTicket/query?'
                 f'leftTicketDTO.train_date={date}&'
                 f'leftTicketDTO.from_station={depart_city[1]}&'
                 f'leftTicketDTO.to_station={arrive_city[1]}&'
                 'purpose_codes=ADULT'
-        ) as r:
+        )) as r:
             import json
             # todo add dcity adn acity
             print('+-------+-------+-------+-------+-------+-------+-------+---------'
@@ -92,9 +92,10 @@ def main(args: list = None):
                   '| SLEEPER | SEAT | SEAT |\n'
                   '+-------+-------+-------+-------+-------+-------+-------+---------'
                   '+---------+------+------+')
-            import jerryc05.mod_12306.mod_parser
-            ticket_count = jerryc05.mod_12306.mod_parser.ticket_count
-            colored_text = jerryc05.mod_12306.mod_parser.colored_text
+            import jerryc05.mod_12306.mod_parser as m12306_mod_parser
+            import jerryc05.mod_parser as j_parser
+            ticket_count = m12306_mod_parser.ticket_count
+            colored_text = j_parser.colored_text
             r_bytes = r.read()
             if b'<' in r_bytes[:4]:
                 raise SystemError(f'Invalid date, {date} may be some date in the past.')
