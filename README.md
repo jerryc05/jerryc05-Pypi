@@ -21,11 +21,11 @@ The following are features that you may make use of right away/in the near futur
 
 Feel free to try it out, and submit an issue if you found a bug.
 
-### Working
+### Mature
 
 -   N/A
 
-### Testing
+### In progress
 -   [12306 Ticket Grabbing](#12306-ticket-grabbing)
 ### Planning
 -   BaiduYun Storage Download
@@ -41,7 +41,7 @@ The following dependency is necessary:
 
 ### Option 1: Install via pip (recommended)
 
-The official release of `jerryc05` is distributed on [PyPI](https://pypi.python.org/pypi/jerryc05), and can be installed easily via the pip package manager:
+The official releases of `jerryc05` are distributed on [PyPI](https://pypi.python.org/pypi/jerryc05), and can be installed easily via the pip package manager:
 
 ```bash
 $ pip3 install -U jerryc05
@@ -53,11 +53,11 @@ or
 $ python3 -m pip install -U jerryc05
 ```
 
-*Note*: Windows user should replace`python3` with `python`.
+*Note*: Windows users should replace`python3` with `python`.
 
 ### Option 2: Download from GitHub
 
-You can download the latest [pre-release archive](https://github.com/jerryc05/jerryc05-PyPI/archive/master.zip) of `jerryc05`. This approach is for advanced users, and they know what to do. Therefore, no more instructions will be addressed here.
+You can download the latest [pre-release archive](https://github.com/jerryc05/jerryc05-PyPI/archive/master.zip) of `jerryc05`. This approach is for advanced users, and they know what to do. Therefore, no further instructions will be addressed here.
 
 ## Documentation
 

@@ -2,7 +2,6 @@ if __name__ == "__main__":
     import os
     import shutil
     import sys
-    # import subprocess
     import multiprocessing as mp
     import python_minifier
 

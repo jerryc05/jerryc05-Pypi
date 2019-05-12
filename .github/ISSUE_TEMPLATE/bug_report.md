@@ -17,7 +17,7 @@ assignees: jerryc05
 A clear and concise description of what the bug is, and label it as `bug`.
 -   [Write here...]
 
-###  2. To Reproduce/复现错误
+### 2. To Reproduce/复现错误
 Steps to reproduce the behavior:
 1.   Run the command [...]
 2.   Type [...], and press ENTER
@@ -29,7 +29,7 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen./请清晰而简明地描述您所预期的结果。
 -   [Write here...]
 
-###  4. Environment:/系统环境：
+### 4. Environment:/系统环境：
 -   Operating System [e.g., Win 10]: [...]
 -   Python Version [e.g., CPython 3.7.3]: [...]
 -   Package Version [e.g. jerryc05 v0.1.6]: [...]
