@@ -75,13 +75,13 @@ def main(args: list = None):
 
     if 1:  # Network accessing
         import urllib.request as u_req
-        with u_req.urlopen(u_req.Request(
+        with u_req.urlopen(
                 'https://kyfw.12306.cn/otn/leftTicket/query?'
                 f'leftTicketDTO.train_date={date}&'
                 f'leftTicketDTO.from_station={depart_city[1]}&'
                 f'leftTicketDTO.to_station={arrive_city[1]}&'
                 'purpose_codes=ADULT'
-        )) as r:
+        ) as r:
             import json
             # todo add dcity adn acity
             print('+-------+-------+-------+-------+-------+-------+-------+---------'

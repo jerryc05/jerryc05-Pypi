@@ -5,4 +5,5 @@
 .mypy_cache
 .sonarlint
 __pycache__
+.idea
 *.js

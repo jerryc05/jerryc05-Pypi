@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 from jerryc05.__init__ import __version__
 
 long_description = ''
-with open("README.md", "r") as readme:
+with open('README.md', 'r',encoding='utf-8') as readme:
     long_description = readme.read()
 
 github_repo: str = 'https://github.com/jerryc05/jerryc05-Pypi'

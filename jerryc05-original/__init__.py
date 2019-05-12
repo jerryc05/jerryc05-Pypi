@@ -1,9 +1,9 @@
-__version__ = '0.1.7a1'
+__version__ = '0.1.7a2'
 
 import urllib.request as u_req
 try:
     print(end='Checking for updates...\r')
-    with u_req.urlopen(u_req.Request('https://pypi.org/pypi/jerryc05/json'),
+    with u_req.urlopen('https://pypi.org/pypi/jerryc05/json',
                                 timeout=1) as r:
         import json
         js = json.loads(r.read())
@@ -21,5 +21,5 @@ try:
             colored_text = j_parser.colored_text
             colored_text(f'New version {r_latest} is available!!!\n'
                          'Upgrade using command "pip3 install -U jerryc05".\n', 'yellow')
-except:
+except OSError:
     print('')
