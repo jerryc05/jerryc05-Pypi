@@ -8,12 +8,12 @@
 
 ## Contents
 
-- [**Features**](#features)
-- [**Installation**](#installation)
-- [**Documentation**](#documentation)
-- [Contributing](#Contributing)
-- [Author](#Author)
-- [License](#License)
+-   [**Features**](#features)
+-   [**Installation**](#installation)
+-   [**Documentation**](#documentation)
+-   [Contributing](#Contributing)
+-   [Author](#Author)
+-   [License](#License)
 
 ## Features
 
@@ -21,16 +21,15 @@ The following are features that you may make use of right away/in the near futur
 
 Feel free to try it out, and submit an issue if you found a bug.
 
-### Working:
+### Working
 
-- N/A
+-   N/A
 
-### Testing:
-- [12306 Ticket Grabbing](#12306-ticket-grabbing)
-### Planning:
-- BaiduYun Storage Download
-- Bilibili Video Download
-
+### Testing
+-   [12306 Ticket Grabbing](#12306-ticket-grabbing)
+### Planning
+-   BaiduYun Storage Download
+-   Bilibili Video Download
 
 ## Installation
 
@@ -38,7 +37,7 @@ Feel free to try it out, and submit an issue if you found a bug.
 
 The following dependency is necessary:
 
-* **[Python](https://www.python.org/downloads/)**  3.6+
+-   **[Python](https://www.python.org/downloads/)**  3.6+
 
 ### Option 1: Install via pip (recommended)
 
@@ -70,7 +69,7 @@ You can download the latest [pre-release archive](https://github.com/jerryc05/je
 
 ## Authors
 
-- **Jerry “Ziyan” Chen** - *Initial work*
+-   **Jerry “Ziyan” Chen** - *Initial work*
 
 ## License
 
