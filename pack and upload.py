@@ -30,18 +30,22 @@ if __name__ == "__main__":
                     file_name not in exclude else f1.read())
     print('Minify done!!')
 
-    rmtree=shutil.rmtree
-    mp.Process(target=rmtree, args=('dist',True)).start()
-    mp.Process(target=rmtree, args=('build',True)).start()
+    rmtree = shutil.rmtree
+    mp.Process(target=rmtree, args=('dist', True)).start()
+    mp.Process(target=rmtree, args=('build', True)).start()
 
-    sys.argv.append('bdist_wheel')
+    argv = sys.argv
+    argv.append('bdist_wheel')
     import setup
-    mp.Process(target=rmtree, args=('build',True)).start()
+    mp.Process(target=rmtree, args=('build', True)).start()
 
     import pip._internal as pip
     for dir_path, _, file_names in os.walk('dist'):
-        pip.main(fr'install -U --pre --force-reinstall dist/{file_names[0]}'.split())
+        pip.main(
+            fr'install -U --pre --force-reinstall dist/{file_names[0]}'.split())
         break
-    import twine.commands.upload as twine
-    twine.main(r'twine upload --verbose -u jerryc05 dist\*')
+
+    import twine.__main__ as twine
+    argv[1:] = 'upload --verbose -u jerryc05 dist\*'.split()
+    twine.main()
     input('All done!!')
