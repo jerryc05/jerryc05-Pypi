@@ -6,22 +6,24 @@
 
 **jerryc05** is a tool collection developed by *@jerryc05* and published to [PyPI Repo](<https://pypi.org/project/jerryc05/>).
 
-**IMPORTANT!!!** This repo is only actively maintained on [GitHub](<https://github.com/jerryc05/jerryc05-PyPI>). **For faster access from Mainland China**, there are two mirror sites: [GitLab](<https://gitlab.com/jerryc05/jerryc05-PyPI>) and [Tencent Dev](<https://dev.tencent.com/u/jerryc05/p/jerryc05-PyPI/git>). Please see [Contributing](#Contributing) tab for more info if you want to report anything.
+**IMPORTANT!!!** This repo is only actively maintained on [GitHub](<https://github.com/jerryc05/jerryc05-PyPI>). 
+
+**For faster access from Mainland China**, there are two mirror sites: [GitLab](<https://gitlab.com/jerryc05/jerryc05-PyPI>) and [Tencent Dev](<https://dev.tencent.com/u/jerryc05/p/jerryc05-PyPI/git>). Please see [Contributing](#contributing) tab for more info if you want to report anything.
 
 ## Contents
 
 -   [**Features**](#features)
 -   [**Installation**](#installation)
 -   [How To Use](#how-to-use)
--   [Contributing](#Contributing)
--   [Author](#Author)
--   [License](#License)
+-   [Contributing](#contributing)
+-   [Author](#author)
+-   [License](#license)
 
 ## Features
 
 The following are features that you may make use of right away/in the near future. 
 
-Feel free to try it out, and [submit an issue](#Contributing) if you found a bug.
+Feel free to try it out, and [submit an issue](#user-content-contributing) if you found a bug.
 
 ### Mature
 
@@ -67,7 +69,7 @@ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jerryc05 -U
 
 ### Option 2: Download from GitHub
 
-You can download the latest pre-release archive of `jerryc05` from [GitHub](https://github.com/jerryc05/jerryc05-PyPI/archive/master.zip), [GitLab](https://gitlab.com/jerryc05/jerryc05-PyPI/-/archive/master/jerryc05-PyPI-master.zip), or [Tencent Dev](<https://dev.tencent.com/u/jerryc05/p/jerryc05-PyPI/git/archive/master>). This approach is for advanced users, and they know what to do. Therefore, no further instructions will be addressed here.
+You can download the latest pre-release archive of `jerryc05` from [GitHub](https://github.com/jerryc05/jerryc05-PyPI/archive/master.zip), [GitLab](https://gitlab.com/jerryc05/jerryc05-PyPI/-/archive/master/jerryc05-PyPI-master.zip), or [Tencent Dev](<https://dev.tencent.com/u/jerryc05/p/jerryc05-PyPI/git/archive/master>). This option is for advanced users, and they know what to do. Therefore, no further instructions will be addressed here.
 
 ## How To Use
 
@@ -75,7 +77,15 @@ See Wiki page from [GitHub](<https://github.com/jerryc05/jerryc05-PyPI/wiki>) or
 
 ## Contributing
 
-// todo
+### Option 1: Submit via GitHub Issue (recommended)
+
+It is strongly encouraged to submit bug reports and feature requests through [GitHub Issue](https://github.com/jerryc05/jerryc05-PyPI/issues) page. It makes it easier for me to manage all requests in one place, and every issue is guaranteed to get a response. 
+
+**IMPORTANT!!!** Do not use issue pages in GitLab or Tencent Dev. It is a pain to maintain multiple separate issue pages, and your request will not get any response if you do so.
+
+### Option 2: Contact Me via Direct Message Apps
+
+This feature only applies to those who added me as their friend on QQ or WeChat; however, I still prefer to maintain issue together on GitHub Issue](https://github.com/jerryc05/jerryc05-PyPI/issues) page.
 
 ## Authors
 
