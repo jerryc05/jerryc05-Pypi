@@ -67,7 +67,7 @@ python3 -m pip install jerryc05 -U
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jerryc05 -U
 ```
 
-### Option 2: Download from GitHub
+### Option 2: Download from Online Repository
 
 You can download the latest pre-release archive of `jerryc05` from [GitHub](https://github.com/jerryc05/jerryc05-PyPI/archive/master.zip), [GitLab](https://gitlab.com/jerryc05/jerryc05-PyPI/-/archive/master/jerryc05-PyPI-master.zip), or [Tencent Dev](<https://dev.tencent.com/u/jerryc05/p/jerryc05-PyPI/git/archive/master>). This option is for advanced users, and they know what to do. Therefore, no further instructions will be addressed here.
 
@@ -85,7 +85,7 @@ It is strongly encouraged to submit bug reports and feature requests through [Gi
 
 ### Option 2: Contact Me via Direct Message Apps
 
-This feature only applies to those who added me as their friend on QQ or WeChat; however, I still prefer to maintain issue together on GitHub Issue](https://github.com/jerryc05/jerryc05-PyPI/issues) page.
+This feature only applies to those who added me as their friend on QQ or WeChat; however, I still prefer to maintain issue together on GitHub Issue](<https://github.com/jerryc05/jerryc05-PyPI/issues>) page.
 
 ## Authors
 
