@@ -1,8 +1,8 @@
 # jerryc05 - PyPI Repo
 
-![PyPI version](<https://img.shields.io/pypi/v/jerryc05.svg>) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/jerryc05.svg) ![PyPI - Status](https://img.shields.io/pypi/status/jerryc05.svg) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jerryc05/jerryc05-pypi.svg) ![Codacy grade](https://img.shields.io/codacy/grade/fd65fde9192d43a2bc973cafff626596.svg) ![GitHub](https://img.shields.io/github/license/jerryc05/jerryc05-pypi.svg)
+![PyPI version](<https://img.shields.io/pypi/v/jerryc05.svg>) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/jerryc05.svg) ![PyPI - Downloads](https://img.shields.io/pypi/dm/jerryc05.svg) ![PyPI - Status](https://img.shields.io/pypi/status/jerryc05.svg) ![Codacy grade](https://img.shields.io/codacy/grade/fd65fde9192d43a2bc973cafff626596.svg)
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/jerryc05/jerryc05-pypi.svg) ![PyPI - Downloads](https://img.shields.io/pypi/dm/jerryc05.svg) ![GitHub issues](https://img.shields.io/github/issues/jerryc05/jerryc05-pypi.svg)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/jerryc05/jerryc05-pypi.svg) ![GitHub issues](https://img.shields.io/github/issues/jerryc05/jerryc05-pypi.svg) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jerryc05/jerryc05-pypi.svg) ![GitHub License](https://img.shields.io/github/license/jerryc05/jerryc05-pypi.svg)
 
 **jerryc05** is a tool collection developed by *@jerryc05* and published to [PyPI Repo](<https://pypi.org/project/jerryc05/>).
 
@@ -12,12 +12,12 @@
 
 ## Contents
 
--   [**Features**](#features)
--   [**Installation**](#installation)
--   [How To Use](#how-to-use)
--   [Contributing](#contributing)
--   [Author](#author)
--   [License](#license)
+-   [**Features**](#user-content-features)
+-   [**Installation**](#user-content-installation)
+-   [How To Use](#user-content-how-to-use)
+-   [Contributing](#user-content-contributing)
+-   [Author](#user-content-author)
+-   [License](#user-content-license)
 
 ## Features
 
@@ -33,7 +33,8 @@ Feel free to try it out, and [submit an issue](#user-content-contributing) if yo
 -   12306 Ticket Grabbing
 ### Planning
 -   BaiduYun Storage Download
--   Bilibili Video Download
+-   Video Download
+-   Music Download
 
 ## Installation
 
@@ -51,12 +52,6 @@ Open `cmd.exe` or `powershell.exe` (Win) or `terminal` (Mac, Linux), and type:
 
 ```console
 pip3 install jerryc05 -U
-```
-
-or
-
-```console
-python3 -m pip install jerryc05 -U
 ```
 
 *Note*: Windows users might want to use command `python3` instead of`python`.
