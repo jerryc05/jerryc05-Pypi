@@ -2,7 +2,7 @@
 
 ![PyPI version](<https://img.shields.io/pypi/v/jerryc05.svg>) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/jerryc05.svg) ![PyPI - Downloads](https://img.shields.io/pypi/dm/jerryc05.svg) ![PyPI - Status](https://img.shields.io/pypi/status/jerryc05.svg) ![Codacy grade](https://img.shields.io/codacy/grade/fd65fde9192d43a2bc973cafff626596.svg)
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/jerryc05/jerryc05-pypi.svg) ![GitHub issues](https://img.shields.io/github/issues/jerryc05/jerryc05-pypi.svg) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jerryc05/jerryc05-pypi.svg) ![GitHub License](https://img.shields.io/github/license/jerryc05/jerryc05-pypi.svg)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/jerryc05/jerryc05-pypi.svg) ![GitHub issues](https://img.shields.io/github/issues/jerryc05/jerryc05-pypi.svg) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jerryc05/jerryc05-pypi.svg) ![GitHub License](https://img.shields.io/github/license/jerryc05/jerryc05-pypi.svg)
 
 **jerryc05** is a tool collection developed by *@jerryc05* and published to [PyPI Repo](<https://pypi.org/project/jerryc05/>).
 
@@ -80,7 +80,7 @@ It is strongly encouraged to submit bug reports and feature requests through [Gi
 
 ### Option 2: Contact Me via Direct Message Apps
 
-This feature only applies to those who added me as their friend on QQ or WeChat; however, I still prefer to maintain issue together on GitHub Issue](<https://github.com/jerryc05/jerryc05-PyPI/issues>) page.
+This feature only applies to those who added me as their friend on QQ or WeChat; however, I still prefer to maintain issue together on [GitHub Issue](<https://github.com/jerryc05/jerryc05-PyPI/issues>) page.
 
 ## Authors
 
