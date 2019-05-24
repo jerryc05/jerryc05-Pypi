@@ -26,15 +26,17 @@ The following are features that you may make use of right away/in the near futur
 Feel free to try it out, and [submit an issue](#user-content-contributing) if you found a bug.
 
 ### Mature
-
 -   N/A
 
 ### In progress
--   12306 Ticket Grabbing
-### Planning
 -   BaiduYun Storage Download
+
+### Planning
 -   Video Download
 -   Music Download
+
+### Won’t work
+-   12306 Ticket Grabbing
 
 ## Installation
 
@@ -68,7 +70,7 @@ You can download the latest pre-release archive of `jerryc05` from [GitHub](http
 
 ## How To Use
 
-See Wiki page from [GitHub](<https://github.com/jerryc05/jerryc05-PyPI/wiki>) or [GitLab](<https://gitlab.com/jerryc05/jerryc05-PyPI/wikis>). *Tencent Dev does not support pushing Wiki pages from local.*
+See GitHub pages from <https://jerryc05.github.io/jerryc05-PyPI/>.
 
 ## Contributing
 
@@ -84,8 +86,8 @@ This feature only applies to those who added me as their friend on QQ or WeChat;
 
 ## Authors
 
--   **Jerry “Ziyan” Chen** - *Initial work*
+-   **[@jerryc05](<https://github.com/jerryc05>)** - *Initial work*
 
 ## License
 
-This project is licensed under the GNU v3 License - see the [LICENSE.md](https://github.com/jerryc05/jerryc05-Pypi/blob/master/LICENSE) file for details.
+This project is licensed under the GNU v3 License - see [LICENSE.md](https://github.com/jerryc05/jerryc05-Pypi/blob/master/LICENSE) file for details.
