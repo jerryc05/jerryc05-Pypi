@@ -50,12 +50,11 @@ def main(args: list = None):
 			'           :r2. rMBGBMGi .7Y, 1i::i   vO0PMNNSXXEqPYSecbone.\n'
 			'           .i1r. .jkY,    vE. iY....  20Fq0q5X5F1S2F22uuv1M;'
 		)
-	elif args[1] == '12306':
-		jerryc05.mod_12306.__main__.main(args[2:])
+
 	elif args[1] == '-v':
 		prt(__v)
 	else:
-		prt(f'Argument {args[1]} unsupported. Contact support?')
+		prt(f'Argument {args[1]} unsupported. Did you just mis-typed?')
 	return
 
 

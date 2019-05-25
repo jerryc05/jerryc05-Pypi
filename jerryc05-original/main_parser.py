@@ -1,3 +1,5 @@
+
+
 def colored_text(
 				text: str,
 				fore='RESET',
@@ -67,5 +69,3 @@ def colored_text(
 		f'{backs.get(back.upper(), "")}'
 		f'{text}'
 	)
-
-# colored_text('red', 'red')
