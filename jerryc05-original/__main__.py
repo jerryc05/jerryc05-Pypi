@@ -1,15 +1,11 @@
-import sys
-
-import jerryc05
-import jerryc05.mod_12306.__main__
-
-
 # noinspection SpellCheckingInspection
 def main(args: list = None):
 	"""Main Executor of jerryc05 module.
 
 	:param args : The output from user
 	"""
+	import sys
+	import jerryc05
 
 	prt = print
 	argv = sys.argv
@@ -25,7 +21,7 @@ def main(args: list = None):
 			'No argument specified! I donno what to do, my flend!\n'
 			'                                  .. .vr\n'
 			'                                qBMBBBMBMY\n'
-			'                               8BBBBBOBMBMv   叫你不给参数!\n'
+			'                               8BBBBBOBMBMv    叫你不给参数！\n'
 			'                             iMBMM5vOY:BMBBv     不给参数！？\n'
 			'             .r,             OBM;   .: rBBBBBY\n'
 			'             vUL             7BB   .;7. LBMMBBM.\n'
