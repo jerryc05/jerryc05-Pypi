@@ -1,6 +1,6 @@
-def colored_text(text: str,	fore='RESET', back='RESET',
+def colored_text(text: str, fore='RESET', back='RESET',
                  style='RESET_ALL') -> None:
-    r"""Print text in colored format.
+    """Print text in colored format.
 
     :param text: Text to format.
     :param fore: Foreground color to format, default='RESET'.
@@ -16,8 +16,8 @@ def colored_text(text: str,	fore='RESET', back='RESET',
 
     prt = print
 
-    fore = fore.upper()
-    back = back.upper()
+    fore  =  fore.upper() # yapf: disable
+    back  =  back.upper() # yapf: disable
     style = style.upper()
 
     import colorama
@@ -34,7 +34,7 @@ def colored_text(text: str,	fore='RESET', back='RESET',
         'WHITE'     : c_fore.WHITE,
         'BLACK'     : c_fore.BLACK,
         'RESET'     : c_fore.RESET,
-    }
+    } # yapf: disable
     if back == 'RESET' and style == 'RESET_ALL':
         prt(f'{fores.get(fore.upper(), "")}{text}')
         return
@@ -50,17 +50,15 @@ def colored_text(text: str,	fore='RESET', back='RESET',
         'WHITE'     : c_back.WHITE,
         'BLACK'     : c_back.BLACK,
         'RESET'     : c_back.RESET,
-    }
+    } # yapf: disable
     c_style = colorama.Style
     styles = {
         'DIM'       : c_style.DIM,
         'NORMAL'    : c_style.NORMAL,
         'BRIGHT'    : c_style.BRIGHT,
         'RESET_ALL' : c_style.RESET_ALL,
-    }
-    prt(
-        f'{styles.get(style.upper(), "")}'
+    } # yapf: disable
+    prt(f'{styles.get(style.upper(), "")}'
         f'{ fores.get( fore.upper(), "")}'
         f'{ backs.get( back.upper(), "")}'
-        f'{text}'
-    )
+        f'{text}')
