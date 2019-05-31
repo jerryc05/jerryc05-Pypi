@@ -50,7 +50,7 @@ The following dependency is necessary:
 
 The official releases of `jerryc05` are distributed on [PyPI](https://pypi.python.org/pypi/jerryc05), and can be installed easily via the pip package manager.
 
-Open `cmd.exe` or `powershell.exe` ![Win](<https://img.icons8.com/color/24/000000/windows8.png>) or `terminal` ![Mac](<https://img.icons8.com/color/24/000000/ubuntu.png>)/![Linux](<https://img.icons8.com/color/24/000000/mac-os.png>), and type:
+Open `cmd.exe` or `powershell.exe` ![Win](<https://img.icons8.com/color/18/000000/windows8.png>) or `terminal` ![Mac](<https://img.icons8.com/color/18/000000/ubuntu.png>)/![Linux](<https://img.icons8.com/color/18/000000/mac-os.png>), and type:
 
 ```console
 pip3 install jerryc05 -U
