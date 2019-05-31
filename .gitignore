@@ -6,4 +6,3 @@
 .sonarlint
 __pycache__
 .idea
-*.js
