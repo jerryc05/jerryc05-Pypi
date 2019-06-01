@@ -1,24 +1,23 @@
 def main():
-    class Flight():
-        def __init__(self,
-                     d_city: str,
-                     a_city: str,
-                     d_date: str = None,
-                     a_date: str = None,
-                     web_page: str = None):
-            self.d_city = d_city     # departure city
-            self.a_city = a_city     #   arrival city
-            self.d_date = d_date     # departure date
-            self.a_date = a_date     #   arrival date
-            self.web_page = web_page #    detail webpage
+    import dataclasses
+
+    @dataclasses.dataclass
+    class Flight:
+        d_city: str           # departure city
+        a_city: str           #   arrival city
+        d_time_or_date: str   # departure time or departure date
+        a_time_or_r_date: str #   arrival time or   arrival date
 
     class BaseCrawler():
         def __init__(self, engine: str, flight: Flight):
             self._engine = engine # crawler type
             self._flight = flight #  flight data
-            self.is_round_trip = True if flight.a_date else False
+            self.is_round_trip = True if flight.a_time_or_r_date else False
 
-        def search(self, result: tuple):
+        def search(self):
+            raise NotImplementedError
+
+        def parse(self, result: bytes) -> list:
             raise NotImplementedError
 
     class HotWireCrawler(BaseCrawler):
@@ -69,11 +68,11 @@ def main():
             raise SystemError(
                 "Network access failed! Remote: vacation.hotwire.com")
 
-        def search(self, result: list):
+        def search(self):
             d_city = self._get_airport(self._flight.d_city)
             a_city = self._get_airport(self._flight.a_city)
             import urllib.parse as u_parse
-            quote=u_parse.quote
+            quote = u_parse.quote
             url = (
                 r'https://vacation.hotwire.com/Flights-Search?'
                 f'trip={"roundtrip" if self.is_round_trip else "OneWay"}'
@@ -87,34 +86,20 @@ def main():
                 u_read: bytes = u_open.read()
                 # print(u_read)
                 # print('\n\n\n')
-                i=u_read.index(b'request.open(')
-                u_read=u_read[i+21:u_read.index(b', true')].replace(b"' + fl + '", b'&is=1').replace(b"' + ul",b'&ul=0')
-                print(f'https://vacation.hotwire.com{u_read.decode()}')
-                # request.open('GET', '/Flight-Search-Paging?c=
+                _ = u_read.index(b'request.open(')
+                u_read = u_read[_ + 21:u_read.index(b', true')].replace(
+                    b"' + fl + '", b'&is=1').replace(b"' + ul", b'&ul=0')
+                with u_req.urlopen(
+                        f'https://vacation.hotwire.com{u_read.decode()}'
+                ) as u_open:
+                    # u_read: bytes = u_open.read()
+                    with open('hotwire.json', 'wb') as f:
+                        f.write(u_open.read())
 
-            # 'https://vacation.hotwire.com/Flights-Search?'
-            # 'trip=roundtrip'
-            # '&leg1=from:Washington, DC, United States (WAS),to:Los Angeles, CA, United States (LAX),departure:06/03/2019TANYT'
-            # '&leg2=from:Los Angeles, CA, United States (LAX),to:Washington, DC, United States (WAS),departure:06/06/2019TANYT'
-            # '&passengers=adults:1,children:0,seniors:0,infantinlap:Y'
-            # '&options=cabinclass:economy'
-            # '&mode=search'
-            # '&origref=vacation.hotwire.com'
+        def parse(self, result: bytes) -> list:
+            exit()
 
-            # https://vacation.hotwire.com/Flights-Search?trip=roundtrip&leg1=from%3AWashington%2C%20DC%2C%20United%20States%20(WAS)%2Cto%3ALos%20Angeles%2C%20CA%2C%20United%20States%20(LAX)%2Cdeparture%3A06%2F01%2F2019TANYT&leg2=from%3ALos%20Angeles%2C%20CA%2C%20United%20States%20(LAX)%2Cto%3AWashington%2C%20DC%2C%20United%20States%20(WAS)%2Cdeparture%3A06%2F02%2F2019TANYT&passengers=adults%3A1%2Cchildren%3A0%2Cseniors%3A0%2Cinfantinlap%3AY&options=cabinclass%3Aeconomy&mode=search&origref=vacation.hotwire.com
-
-            # 'https://vacation.hotwire.com/Flights-Search?'
-            # 'tmid=22041369292'
-            # '&trip=OneWay'
-            # '&leg1=from:WAS,to:LAX,departure:05/31/2019TANYT'
-            # '&passengers=children:0,adults:1,seniors:0,infantinlap:Y'
-            # '&options=sortby:price'
-            # '&mode=search'
-            # '&paandi=true'
-
-            # https://vacation.hotwire.com/Flight-Search-Paging?c=4277bc33-7857-4adf-8376-3c2a1db7e3cf&is=1&sp=asc&cz=200&cn=0&ul=0
-
-    HotWireCrawler(Flight('was', 'lax', '06/03/2019', '06/06/2019')).search([])
+    HotWireCrawler(Flight('was', 'lax', '06/03/2019', '06/06/2019')).search()
 
 
 if __name__ == "__main__":
